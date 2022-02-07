@@ -7,11 +7,16 @@ class Exercise001 {
   // we don't specify it in the code
   // https://docs.scala-lang.org/tour/basics.html
 
-  def capitalizeWord(word: String): String = ""
+  def capitalizeWord(word: String): String =
+    word.substring(0, 1).toUpperCase + word.substring(1)
 
-  def generateInitials(firstName: String, lastName: String) = ""
+  def generateInitials(firstName: String, lastName: String) =
+    s"${firstName.substring(0, 1)}.${lastName.substring(0,1)}"
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = 0.0
+  def addVat(initialPrice: Double, interestRate: Double) : Double = {
+    val vatPrice = initialPrice * (interestRate / 100)
+    (math rint (initialPrice + vatPrice) * 100) / 100
+  }
 
   def reverse(sentence: String) : String = ""
 
