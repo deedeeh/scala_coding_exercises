@@ -1,7 +1,5 @@
 package com.techreturners.exercise002
 
-
-
 class Exercise002 {
   def isFromManchester(person: Person): Boolean = {
       var result: Boolean = false

@@ -12,7 +12,7 @@ class Exercise002Test extends AnyFlatSpec {
     assert(exercise002.isFromManchester(person))
   }
 
-  it should "be correctly identified as residing in somewhere other than Manchester" ignore {
+  it should "be correctly identified as residing in somewhere other than Manchester" in {
     val person = Person("Susan", "Farmer", "Leeds", 23)
 
     assert(!exercise002.isFromManchester(person))
