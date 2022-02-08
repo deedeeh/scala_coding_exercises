@@ -11,14 +11,14 @@ class Exercise001 {
     word.substring(0, 1).toUpperCase + word.substring(1)
 
   def generateInitials(firstName: String, lastName: String) =
-    s"${firstName.substring(0, 1)}.${lastName.substring(0,1)}"
+    s"${firstName.substring(0, 1)}.${lastName.substring(0, 1)}"
 
-  def addVat(initialPrice: Double, interestRate: Double) : Double = {
+  def addVat(initialPrice: Double, interestRate: Double): Double = {
     val vatPrice = initialPrice * (interestRate / 100)
     (math rint (initialPrice + vatPrice) * 100) / 100
   }
 
-  def reverse(sentence: String) : String = sentence.reverse
+  def reverse(sentence: String): String = sentence.reverse
 
   /**
    * Here we show using a Scala sequence which is a type of collection
@@ -28,8 +28,20 @@ class Exercise001 {
    * @return
    */
   def countLinuxUsers(users: Seq[User]): Int = {
-    // Add your code here
-    0
+    var countUsers: Int = 0
+    if (users.nonEmpty) {
+      users.foreach { user =>
+        user.productElementNames.toList
+        if (user.osType == "Linux") {
+          countUsers += 1
+        }
+      }
+    }
+    countUsers
   }
-
 }
+
+
+
+
+
