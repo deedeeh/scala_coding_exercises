@@ -27,6 +27,8 @@ class Exercise001 {
    * @param users A collection of users
    * @return
    */
+
+  //Still trying to figure out last test
   def countLinuxUsers(users: Seq[User]): Int = {
     var countUsers: Int = 0
     if (users.nonEmpty) {
