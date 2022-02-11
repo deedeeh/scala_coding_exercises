@@ -30,16 +30,10 @@ class Exercise001 {
 
   //Still trying to figure out last test
   def countLinuxUsers(users: Seq[User]): Int = {
-    var countUsers: Int = 0
-    if (users.nonEmpty) {
-      users.foreach { user =>
-        user.productElementNames.toList
-        if (user.osType == "Linux") {
-          countUsers += 1
-        }
-      }
-    }
-    countUsers
+    users.count(user => {
+      user.productElementNames.toList
+      user.osType == "Linux"
+    })
   }
 }
 
