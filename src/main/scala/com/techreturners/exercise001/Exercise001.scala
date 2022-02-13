@@ -27,13 +27,17 @@ class Exercise001 {
    * @param users A collection of users
    * @return
    */
-
-  //Still trying to figure out last test
+    
   def countLinuxUsers(users: Seq[User]): Int = {
-    users.count(user => {
-      user.productElementNames.toList
-      user.osType == "Linux"
-    })
+    val isUsersDefined: Option[Seq[User]] = null
+    if(users != isUsersDefined) {
+        users.count(user => {
+          user.productElementNames.toList
+          user.osType == "Linux"
+        })
+    } else {
+      0
+    }
   }
 }
 
