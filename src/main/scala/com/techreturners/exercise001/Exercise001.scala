@@ -27,7 +27,7 @@ class Exercise001 {
    * @param users A collection of users
    * @return
    */
-    
+
   def countLinuxUsers(users: Seq[User]): Int = {
     val isUsersDefined: Option[Seq[User]] = null
     if(users != isUsersDefined) {

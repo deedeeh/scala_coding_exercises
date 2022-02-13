@@ -11,8 +11,8 @@ class Exercise004Test extends AnyFlatSpec{
     // Try un-commenting the code in this test
     // it will fail to compile because the Exercise004 constructor takes a LocalDateTime
     // Have a look in Exercise004 and see if you can un-comment and get this test passing
-//     val exercise004 = new Exercise004(LocalDate.of(2021, Month.JULY, 19))
-//     assert(exercise004.getDateTimeWithGigaSecond == LocalDateTime.of(2053, Month.MARCH, 27, 1, 46, 40))
+     val exercise004 = new Exercise004(LocalDate.of(2021, Month.JULY, 19))
+     assert(exercise004.getDateTimeWithGigaSecond == LocalDateTime.of(2053, Month.MARCH, 27, 1, 46, 40))
   }
 
   it should "be returned when constructed with a date and time" in {
