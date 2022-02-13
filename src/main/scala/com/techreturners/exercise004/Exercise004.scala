@@ -16,14 +16,13 @@ class Exercise004(var dateTime: LocalDateTime) {
 
   def getDateTimeWithGigaSecond: LocalDateTime = {
     val year = dateTime.getYear
-    val month = String.format("%02d", dateTime.getMonthValue)
-    val day = String.format("%02d", dateTime.getDayOfMonth)
-    val hour = String.format("%02d", dateTime.getHour)
-    val minute = String.format("%02d", dateTime.getMinute)
-    val second = String.format("%02d", dateTime.getSecond)
     val nanoOfSecond = dateTime.getNano
-    val formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S")
-    val dateTimeBeforeGigaSecond = LocalDateTime.parse(s"${year}-${month}-${day} ${hour}:${minute}:${second}.${nanoOfSecond}", formatter)
-    dateTimeBeforeGigaSecond.plusSeconds(1000000000)
+    val getDateTimeData: Array[Int] = Array(dateTime.getMonthValue, dateTime.getDayOfMonth, dateTime.getHour, dateTime.getMinute, dateTime.getSecond)
+    val correctDateTimeStrFormat: Array[String] = for (data <- getDateTimeData) yield {
+      String.format("%02d", data)
+    }
+    val dateTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S")
+    val dateTimeParsed = LocalDateTime.parse(s"${year}-${correctDateTimeStrFormat(0)}-${correctDateTimeStrFormat(1)} ${correctDateTimeStrFormat(2)}:${correctDateTimeStrFormat(3)}:${correctDateTimeStrFormat(4)}.${nanoOfSecond}", dateTimeFormatter)
+    dateTimeParsed.plusSeconds(1000000000)
   }
 }

@@ -1,16 +1,12 @@
 package com.techreturners.exercise002
 
 class Exercise002 {
-  def isFromManchester(person: Person): Boolean = {
-      if(person.city ==  "Manchester") {
-        return true
-      }
-      false
-    }
+  def isFromManchester(person: Person): Boolean =
+      person.city ==  "Manchester"
 
-    def canWatchFilm(person: Person, ageLimit: Int): Boolean = {
-      if(person.age >= ageLimit) true else false
-    }
+
+    def canWatchFilm(person: Person, ageLimit: Int): Boolean =
+      person.age >= ageLimit
 
 }
 
